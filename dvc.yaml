@@ -9,3 +9,14 @@ stages:
       - data/processed/X_test.csv
       - data/processed/y_train.csv
       - data/processed/y_test.csv
+
+  scale:
+    cmd: python src/data/02_scale.py --proc_dir data/processed --scaler_path models/scaler.pkl
+    deps:
+      - src/data/02_scale.py
+      - data/processed/X_train.csv
+      - data/processed/X_test.csv
+    outs:
+      - data/processed/X_train_scaled.csv
+      - data/processed/X_test_scaled.csv
+      - models/scaler.pkl
