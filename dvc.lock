@@ -104,3 +104,33 @@ stages:
       hash: md5
       md5: 4856c0299da289b5566edf26e56e0ed5
       size: 13499009
+  evaluate:
+    cmd: python src/models/05_evaluate.py --proc_dir data/processed --model_path
+      models/model.pkl --pred_path data/predictions.csv --metrics_path 
+      metrics/scores.json
+    deps:
+    - path: data/processed/X_test_scaled.csv
+      hash: md5
+      md5: 5e079189af6bd091d651a89fafb1c290
+      size: 57026
+    - path: data/processed/y_test.csv
+      hash: md5
+      md5: a051d29629c8bbb4cfb7e85c7f0315da
+      size: 6456
+    - path: models/model.pkl
+      hash: md5
+      md5: 4856c0299da289b5566edf26e56e0ed5
+      size: 13499009
+    - path: src/models/05_evaluate.py
+      hash: md5
+      md5: eb3ad90152ea3769fa510f9931bf6a7c
+      size: 1416
+    outs:
+    - path: data/predictions.csv
+      hash: md5
+      md5: 3c6e575d12848f18b575a7dd60c597b6
+      size: 13217
+    - path: metrics/scores.json
+      hash: md5
+      md5: 7ae0a869fe750b09038b5948c019abee
+      size: 119
