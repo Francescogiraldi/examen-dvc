@@ -29,3 +29,13 @@ stages:
       - data/processed/y_train.csv
     outs:
       - models/best_params.pkl
+
+  train:
+    cmd: python src/models/04_train.py --proc_dir data/processed --params_path models/best_params.pkl --model_path models/model.pkl --random_state 42
+    deps:
+      - src/models/04_train.py
+      - data/processed/X_train_scaled.csv
+      - data/processed/y_train.csv
+      - models/best_params.pkl
+    outs:
+      - models/model.pkl
