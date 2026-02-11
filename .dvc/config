@@ -1,0 +1,7 @@
+[core]
+    remote = origin
+['remote "origin"']
+    url = s3://dagshub.com/Francescogiraldi/examen-dvc.dvc
+    endpointurl = https://s3.eu-west-1.amazonaws.com
+    access_key_id = 6515d6539aa5dd3b6d420c89d7bd3d4ce7d70513
+    secret_access_key = 6515d6539aa5dd3b6d420c89d7bd3d4ce7d70513
