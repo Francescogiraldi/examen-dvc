@@ -1,0 +1,11 @@
+stages:
+  split:
+    cmd: python src/data/01_split.py --input_csv data/raw/raw.csv --out_dir data/processed --test_size 0.2 --random_state 42
+    deps:
+      - src/data/01_split.py
+      - data/raw/raw.csv
+    outs:
+      - data/processed/X_train.csv
+      - data/processed/X_test.csv
+      - data/processed/y_train.csv
+      - data/processed/y_test.csv
