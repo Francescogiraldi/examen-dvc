@@ -58,3 +58,24 @@ stages:
       hash: md5
       md5: 7146498e9c400cf5c00044261202d065
       size: 1143
+  gridsearch:
+    cmd: python src/models/03_gridsearch.py --proc_dir data/processed --out_path
+      models/best_params.pkl --cv 5 --n_jobs -1 --random_state 42
+    deps:
+    - path: data/processed/X_train_scaled.csv
+      hash: md5
+      md5: c1b80eb7f083888b625dd0369cf381f8
+      size: 227497
+    - path: data/processed/y_train.csv
+      hash: md5
+      md5: a9cd9d91da89f732843d72548f64ded3
+      size: 25951
+    - path: src/models/03_gridsearch.py
+      hash: md5
+      md5: 5267d1ebebfed942e83f9ad5ea52ed8d
+      size: 1424
+    outs:
+    - path: models/best_params.pkl
+      hash: md5
+      md5: 987fe4484748ba1e2a3cde264fb11b3d
+      size: 91
